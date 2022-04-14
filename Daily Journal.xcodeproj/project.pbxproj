@@ -13,9 +13,6 @@
 		698B67BB28055D4F00EEDC2D /* Daily_Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 698B67B928055D4F00EEDC2D /* Daily_Journal.xcdatamodeld */; };
 		698B67BD28055D5100EEDC2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698B67BC28055D5100EEDC2D /* Assets.xcassets */; };
 		698B67C028055D5100EEDC2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698B67BE28055D5100EEDC2D /* LaunchScreen.storyboard */; };
-		698B67CB28055D5100EEDC2D /* Daily_JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67CA28055D5100EEDC2D /* Daily_JournalTests.swift */; };
-		698B67D528055D5100EEDC2D /* Daily_JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67D428055D5100EEDC2D /* Daily_JournalUITests.swift */; };
-		698B67D728055D5100EEDC2D /* Daily_JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67D628055D5100EEDC2D /* Daily_JournalUITestsLaunchTests.swift */; };
 		698B67E42805658200EEDC2D /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67E32805658200EEDC2D /* Entry.swift */; };
 		698B67E6280566DA00EEDC2D /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67E5280566DA00EEDC2D /* EntriesTableViewController.swift */; };
 		698B67E82805674000EEDC2D /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B67E72805674000EEDC2D /* EntryViewController.swift */; };
@@ -48,10 +45,7 @@
 		698B67BF28055D5100EEDC2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		698B67C128055D5100EEDC2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698B67C628055D5100EEDC2D /* Daily JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily JournalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		698B67CA28055D5100EEDC2D /* Daily_JournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_JournalTests.swift; sourceTree = "<group>"; };
 		698B67D028055D5100EEDC2D /* Daily JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily JournalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		698B67D428055D5100EEDC2D /* Daily_JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_JournalUITests.swift; sourceTree = "<group>"; };
-		698B67D628055D5100EEDC2D /* Daily_JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		698B67E32805658200EEDC2D /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		698B67E5280566DA00EEDC2D /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		698B67E72805674000EEDC2D /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				698B67AF28055D4F00EEDC2D /* Daily Journal */,
-				698B67C928055D5100EEDC2D /* Daily JournalTests */,
-				698B67D328055D5100EEDC2D /* Daily JournalUITests */,
 				698B67AE28055D4F00EEDC2D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,23 +109,6 @@
 				698B67B928055D4F00EEDC2D /* Daily_Journal.xcdatamodeld */,
 			);
 			path = "Daily Journal";
-			sourceTree = "<group>";
-		};
-		698B67C928055D5100EEDC2D /* Daily JournalTests */ = {
-			isa = PBXGroup;
-			children = (
-				698B67CA28055D5100EEDC2D /* Daily_JournalTests.swift */,
-			);
-			path = "Daily JournalTests";
-			sourceTree = "<group>";
-		};
-		698B67D328055D5100EEDC2D /* Daily JournalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				698B67D428055D5100EEDC2D /* Daily_JournalUITests.swift */,
-				698B67D628055D5100EEDC2D /* Daily_JournalUITestsLaunchTests.swift */,
-			);
-			path = "Daily JournalUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698B67CB28055D5100EEDC2D /* Daily_JournalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,8 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698B67D728055D5100EEDC2D /* Daily_JournalUITestsLaunchTests.swift in Sources */,
-				698B67D528055D5100EEDC2D /* Daily_JournalUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

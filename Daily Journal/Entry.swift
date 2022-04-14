@@ -12,5 +12,4 @@ class Entry {
     
     var date = Date()
     var text = ""
-    var daeho = ""
 }
