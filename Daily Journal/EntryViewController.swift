@@ -26,9 +26,9 @@ class EntryViewController: UIViewController {
         // let entry = Entry()
         
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appdelegate.persistentContainer.viewContext
+        let conText = appdelegate.persistentContainer.viewContext
         
-        let entry = Entry(context: context)
+        let entry = Entry(context: conText)
         entry.date = datePicker.date
         entry.text = entryTextView.text
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
