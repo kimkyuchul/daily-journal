@@ -25,25 +25,23 @@ class EntryViewController: UIViewController {
         //class는 reference방식이므로, let으로 선언해도 값을 변경하는것은 문제 없다
         // let entry = Entry()
         
+        if let context =  (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let entry = Entry(context: context)
+            entry.date = datePicker.date
+            entry.text = entryTextView.text
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        }
+        
+        /*
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         let conText = appdelegate.persistentContainer.viewContext
-        
+    
         let entry = Entry(context: conText)
         entry.date = datePicker.date
         entry.text = entryTextView.text
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+         */
         
-
-        
-        
-        /*
-        if let context =  (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {   
-            
-        }
-        */
-        // 뷰가 사라질 때 date 와 text 를 UI에서 지정된 값으로 설정
-        //entry.date = datePicker.date
-        //entry.text = entryTextView.text
         
         //Listing Entry
         //entriesVC?.entries.append(entry)

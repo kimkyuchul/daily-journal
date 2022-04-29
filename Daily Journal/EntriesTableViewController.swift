@@ -19,6 +19,18 @@ class EntriesTableViewController: UITableViewController {
        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let context =  (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let entriesFromCoreData = try? context.fetch(Entry.fetchRequest()) as? [Entry] {
+                entries = entriesFromCoreData
+                tableView.reloadData()
+                
+            }
+            
+    }
+}
+    
 
 
 // 섹션의 수
@@ -39,7 +51,10 @@ class EntriesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // EntiresTableViewController.swift 에서 prepare 함수에서 segue가 이뤄질 때에 도착지 VC인 EntryViewController 의 entriesVC 를 스스로로 설정할 수 있도록 self 로 할당
         guard let entryVC = segue.destination as? EntryViewController else { return }
-        entryVC.entriesVC = self
+        
+        
+        
+        //entryVC.entriesVC = self
         
     }
 
