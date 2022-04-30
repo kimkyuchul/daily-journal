@@ -22,6 +22,7 @@ class EntriesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let context =  (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
+            //fetchRequest
             if let entriesFromCoreData = try? context.fetch(Entry.fetchRequest()) as? [Entry] {
                 entries = entriesFromCoreData
                 tableView.reloadData()
