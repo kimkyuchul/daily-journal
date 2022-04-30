@@ -25,7 +25,7 @@ class EntriesTableViewController: UITableViewController {
             //fetchRequest Entry
             if let entriesFromCoreData = try? context.fetch(Entry.fetchRequest()) as? [Entry] {
                 entries = entriesFromCoreData
-                self.tableView.reloadData()
+                tableView.reloadData()
                 
             }
             
