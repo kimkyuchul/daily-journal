@@ -12,10 +12,22 @@ class EntryViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var entryTextView: UITextView!
     
-    var entriesVC : EntriesTableViewController?
+    var entry: Entry?
+    
+    //var entriesVC : EntriesTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if entry == nil {
+            //create
+        } else {
+            // Fill in info about existing entry
+            entryTextView.text = entry!.text
+            if let dateTobeShown = entry!.date {
+                datePicker.date = dateTobeShown
+            }
+        }
 
     }
     
