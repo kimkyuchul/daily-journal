@@ -36,7 +36,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="7hO-Y1-7s1"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Ccn-Jh-Mgr">
                             <connections>
-                                <segue destination="wIm-MU-ChD" kind="show" id="6Xj-yr-3pu"/>
+                                <segue destination="wIm-MU-ChD" kind="show" identifier="segueToEntry" id="6Xj-yr-3pu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

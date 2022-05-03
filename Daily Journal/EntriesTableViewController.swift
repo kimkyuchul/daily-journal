@@ -49,12 +49,20 @@ class EntriesTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let entry = entries[indexPath.row]
+        performSegue(withIdentifier: "segueToEntry", sender: entry)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // EntiresTableViewController.swift 에서 prepare 함수에서 segue가 이뤄질 때에 도착지 VC인 EntryViewController 의 entriesVC 를 스스로로 설정할 수 있도록 self 로 할당
         guard let entryVC = segue.destination as? EntryViewController else { return }
+        //performSegue를 하게되면, prepare 에서 segue의 destination 을 EntryViewController 로 unwrap하여 sender 로 전달받은 entry 를 해당 VC의 entry로 지정
+        guard let entryToBeSent = sender as? Entry else { return }
+        entryVC.entry = entryToBeSent
         
         
         
+     // EntiresTableViewController.swift 에서 prepare 함수에서 segue가 이뤄질 때에 도착지 VC인 EntryViewController 의 entriesVC 를 스스로로 설정할 수 있도록 self 로 할당
         //entryVC.entriesVC = self
         
     }
