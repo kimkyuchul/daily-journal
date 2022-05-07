@@ -1,4 +1,4 @@
-## IOS daily-journal (CoreData활용한 tableView)
+# IOS daily-journal (CoreData활용한 tableView)
 
 tableView/customtableViewCell/CoreData 실습
 <br />
