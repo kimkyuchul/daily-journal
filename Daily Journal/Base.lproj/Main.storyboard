@@ -56,11 +56,13 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="7kN-pE-DkL">
                                 <rect key="frame" x="47" y="108" width="320" height="216"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="wIm-MU-ChD" eventType="valueChanged" id="ir0-un-oHb"/>
+                                </connections>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Uz-nA-5e2">
                                 <rect key="frame" x="20" y="344" width="374" height="449"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -81,9 +83,13 @@
                     <navigationItem key="navigationItem" id="OVn-cC-B66">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="cL4-YH-CXw">
                             <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <action selector="deleteTapped:" destination="wIm-MU-ChD" id="W9K-L4-GEO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraints" destination="lwx-mU-tfm" id="anV-uX-iUO"/>
                         <outlet property="datePicker" destination="7kN-pE-DkL" id="FFp-Gi-dWT"/>
                         <outlet property="entryTextView" destination="7Uz-nA-5e2" id="pMR-1s-f2Y"/>
                     </connections>
