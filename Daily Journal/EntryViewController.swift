@@ -25,7 +25,7 @@ class EntryViewController: UIViewController, UITextViewDelegate {
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 entry = Entry(context: context)
                 entry?.date = datePicker.date
-                entry?.text = "Today was ..."
+                entry?.text = "Today was .."
                 entryTextView.becomeFirstResponder()
             }
         }
