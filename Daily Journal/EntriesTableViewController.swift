@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EntriesTableViewController: UITableViewController {
     
@@ -22,8 +23,11 @@ class EntriesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let context =  (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
+            let request: NSFetchRequest<Entry> = Entry.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+            
             //fetchRequest Entry!
-            if let entriesFromCoreData = try? context.fetch(Entry.fetchRequest()) as? [Entry] {
+            if let entriesFromCoreData = try? context.fetch(request) {
                 entries = entriesFromCoreData
                 tableView.reloadData()
                 
