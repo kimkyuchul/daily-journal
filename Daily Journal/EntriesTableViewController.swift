@@ -10,13 +10,13 @@ import UIKit
 class EntriesTableViewController: UITableViewController {
     
     var entries : [Entry] = []
-
+    
     override func viewDidLoad() {
         
         
         super.viewDidLoad()
-
-       
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,29 +29,39 @@ class EntriesTableViewController: UITableViewController {
                 
             }
             
+        }
     }
-}
     
-
-
-// 섹션의 수
+    
+    
+    // 섹션의 수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return entries.count
     }
-
-// 셀의 수
+    
+    // 셀의 수
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        let entry = entries[indexPath.row]
-        cell.textLabel?.text = entry.text
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell") as? EntryTableViewCell {
+            
+            let entry = entries[indexPath.row]
+            cell.entryTextLabel?.text = entry.text
+            cell.monthLabel.text = entry.month()
+            cell.dayLabel.text = entry.day()
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = entries[indexPath.row]
         performSegue(withIdentifier: "segueToEntry", sender: entry)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,11 +72,11 @@ class EntriesTableViewController: UITableViewController {
         
         
         
-     // EntiresTableViewController.swift 에서 prepare 함수에서 segue가 이뤄질 때에 도착지 VC인 EntryViewController 의 entriesVC 를 스스로로 설정할 수 있도록 self 로 할당
+        // EntiresTableViewController.swift 에서 prepare 함수에서 segue가 이뤄질 때에 도착지 VC인 EntryViewController 의 entriesVC 를 스스로로 설정할 수 있도록 self 로 할당
         //entryVC.entriesVC = self
         
     }
-
-
+    
+    
 }
 

@@ -17,13 +17,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GYY-AI-0Us">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="100" id="GYY-AI-0Us" customClass="EntryTableViewCell" customModule="Daily_Journal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GYY-AI-0Us" id="LAR-nl-AnF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-wU-3H1">
+                                            <rect key="frame" x="20" y="11" width="72" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="Gbq-Kd-gjT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqj-Vk-1KU">
+                                            <rect key="frame" x="38.5" y="52" width="35.5" height="37"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <color key="textColor" systemColor="systemOrangeColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-8x-d3b">
+                                            <rect key="frame" x="112" y="11" width="282" height="78"/>
+                                            <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Nqj-Vk-1KU" firstAttribute="centerX" secondItem="uZP-wU-3H1" secondAttribute="centerX" id="3Bb-LZ-lJV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Y2T-8x-d3b" secondAttribute="trailing" id="5Pl-1W-zJy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Y2T-8x-d3b" secondAttribute="bottom" id="6ms-mr-pRR"/>
+                                        <constraint firstItem="uZP-wU-3H1" firstAttribute="leading" secondItem="LAR-nl-AnF" secondAttribute="leadingMargin" id="AbH-Fb-WQT"/>
+                                        <constraint firstItem="uZP-wU-3H1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LAR-nl-AnF" secondAttribute="leadingMargin" id="CjZ-NJ-Lfw"/>
+                                        <constraint firstItem="Nqj-Vk-1KU" firstAttribute="bottom" secondItem="LAR-nl-AnF" secondAttribute="bottomMargin" id="HZH-RA-fer"/>
+                                        <constraint firstItem="Y2T-8x-d3b" firstAttribute="top" secondItem="LAR-nl-AnF" secondAttribute="topMargin" id="Hap-xe-ozb"/>
+                                        <constraint firstItem="Y2T-8x-d3b" firstAttribute="leading" secondItem="uZP-wU-3H1" secondAttribute="trailing" constant="20" id="eMe-bQ-XcI"/>
+                                        <constraint firstItem="uZP-wU-3H1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LAR-nl-AnF" secondAttribute="topMargin" id="sWJ-eG-WLS"/>
+                                        <constraint firstItem="uZP-wU-3H1" firstAttribute="top" secondItem="LAR-nl-AnF" secondAttribute="topMargin" id="wI6-cm-ez1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="Nqj-Vk-1KU" id="rfl-sw-eUU"/>
+                                    <outlet property="entryTextLabel" destination="Y2T-8x-d3b" id="E69-RZ-YOt"/>
+                                    <outlet property="monthLabel" destination="uZP-wU-3H1" id="n2p-Zi-rmP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -123,6 +164,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
